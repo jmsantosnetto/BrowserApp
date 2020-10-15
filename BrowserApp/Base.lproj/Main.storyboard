@@ -1,24 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WebViewController" customModule="BrowserApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zl-8k-Sne">
+                                <rect key="frame" x="0.0" y="87" width="414" height="732"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o endereço..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dmy-xr-oU8">
+                                <rect key="frame" x="54.5" y="45" width="305" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="305" id="urH-RG-e2E"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="160" translatesAutoresizingMaskIntoConstraints="NO" id="Z4a-Sr-2Xm">
+                                <rect key="frame" x="18" y="840" width="378.5" height="22"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Emn-mb-9Ti">
+                                        <rect key="frame" x="0.0" y="0.0" width="19.5" height="22"/>
+                                        <state key="normal" image="arrow.left" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5Q-ir-fZv">
+                                        <rect key="frame" x="179.5" y="0.0" width="19.5" height="22"/>
+                                        <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxQ-SM-2MM">
+                                        <rect key="frame" x="359" y="0.0" width="19.5" height="22"/>
+                                        <state key="normal" image="arrow.right" catalog="system"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UT-sp-ph9">
+                                <rect key="frame" x="379.5" y="51" width="22.5" height="22"/>
+                                <state key="normal" image="book.fill" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hru-35-VHl">
+                                <rect key="frame" x="16" y="51" width="17.5" height="22"/>
+                                <state key="normal" image="bookmark" catalog="system"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="dmy-xr-oU8" firstAttribute="centerX" secondItem="2zl-8k-Sne" secondAttribute="centerX" id="0u7-3h-NM5"/>
+                            <constraint firstItem="2zl-8k-Sne" firstAttribute="top" secondItem="dmy-xr-oU8" secondAttribute="bottom" constant="8" symbolic="YES" id="0vx-aR-7f5"/>
+                            <constraint firstItem="Z4a-Sr-2Xm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3R5-oI-Agd"/>
+                            <constraint firstItem="2zl-8k-Sne" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4SZ-tB-8ha"/>
+                            <constraint firstItem="2zl-8k-Sne" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4T9-Ew-ibv"/>
+                            <constraint firstItem="3UT-sp-ph9" firstAttribute="leading" secondItem="dmy-xr-oU8" secondAttribute="trailing" constant="20" id="BND-Rg-F7c"/>
+                            <constraint firstItem="2zl-8k-Sne" firstAttribute="top" secondItem="dmy-xr-oU8" secondAttribute="bottom" constant="8" id="Fkg-aw-eG1"/>
+                            <constraint firstItem="dmy-xr-oU8" firstAttribute="centerX" secondItem="Z4a-Sr-2Xm" secondAttribute="centerX" id="QQq-7t-mwM"/>
+                            <constraint firstItem="dmy-xr-oU8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="T5e-dh-2gd"/>
+                            <constraint firstItem="Z4a-Sr-2Xm" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="XvE-bQ-l1e"/>
+                            <constraint firstItem="Hru-35-VHl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hEy-B6-lDN"/>
+                            <constraint firstItem="dmy-xr-oU8" firstAttribute="centerY" secondItem="3UT-sp-ph9" secondAttribute="centerY" id="o5N-M6-ark"/>
+                            <constraint firstItem="Z4a-Sr-2Xm" firstAttribute="top" secondItem="2zl-8k-Sne" secondAttribute="bottom" constant="21" id="vvM-QA-Ifm"/>
+                            <constraint firstItem="dmy-xr-oU8" firstAttribute="centerY" secondItem="Hru-35-VHl" secondAttribute="centerY" id="weL-v9-FB5"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="71.651785714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="book.fill" catalog="system" width="128" height="102"/>
+        <image name="bookmark" catalog="system" width="112" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+    </resources>
 </document>

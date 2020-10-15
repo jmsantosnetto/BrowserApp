@@ -1,19 +1,17 @@
 //
-//  ViewController.swift
+//  WebViewController.swift
 //  BrowserApp
 //
 //  Created by Jose Martins on 15/10/20.
 //
 
 import UIKit
+import WebKit
 
-class ViewController: UIViewController {
-
+class WebViewController: UIViewController, WKNavigationDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
 }
-
