@@ -24,6 +24,7 @@
 		82C57DF425390BD90093EEF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82C57DF625390BD90093EEF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82C57E0025390D260093EEF1 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		82C57E0625394DC50093EEF1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		82C57DDC25390BD60093EEF1 = {
 			isa = PBXGroup;
 			children = (
+				82C57E0625394DC50093EEF1 /* README.md */,
 				82C57DE725390BD60093EEF1 /* BrowserApp */,
 				82C57DE625390BD60093EEF1 /* Products */,
 			);

@@ -103,6 +103,7 @@ class WebViewController: UIViewController, UITextFieldDelegate, WKUIDelegate, WK
     @IBAction func advanceOnHistory(_ sender: Any) {
         self.webView.goForward()
     }
+    
     @IBAction func shareUrl(_ sender: Any) {
         if let url = self.urlTextField.text {
             let activityViewController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
