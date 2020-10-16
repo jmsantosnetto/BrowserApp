@@ -23,66 +23,98 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o endereço..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dmy-xr-oU8">
-                                <rect key="frame" x="54.5" y="45" width="305" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o endereço..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dmy-xr-oU8">
+                                <rect key="frame" x="50" y="45" width="315" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="305" id="urH-RG-e2E"/>
-                                </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" keyboardAppearance="alert" returnKeyType="go" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hru-35-VHl">
+                                <rect key="frame" x="17.5" y="51" width="17.5" height="22"/>
+                                <state key="normal" image="bookmark" catalog="system"/>
+                                <connections>
+                                    <action selector="markAsFavorite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GPN-xJ-2Sr"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="160" translatesAutoresizingMaskIntoConstraints="NO" id="Z4a-Sr-2Xm">
-                                <rect key="frame" x="18" y="840" width="378.5" height="22"/>
+                                <rect key="frame" x="17.5" y="840" width="379" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Emn-mb-9Ti">
                                         <rect key="frame" x="0.0" y="0.0" width="19.5" height="22"/>
                                         <state key="normal" image="arrow.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="backOnHistory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4aE-aX-phV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5Q-ir-fZv">
-                                        <rect key="frame" x="179.5" y="0.0" width="19.5" height="22"/>
+                                        <rect key="frame" x="179.5" y="0.0" width="20" height="22"/>
                                         <state key="normal" image="square.and.arrow.up" catalog="system"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxQ-SM-2MM">
-                                        <rect key="frame" x="359" y="0.0" width="19.5" height="22"/>
+                                        <rect key="frame" x="359.5" y="0.0" width="19.5" height="22"/>
                                         <state key="normal" image="arrow.right" catalog="system"/>
+                                        <connections>
+                                            <action selector="advanceOnHistory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="83b-hI-fNx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UT-sp-ph9">
-                                <rect key="frame" x="379.5" y="51" width="22.5" height="22"/>
+                                <rect key="frame" x="374" y="51" width="22.5" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22.5" id="ep4-at-hKT"/>
+                                </constraints>
                                 <state key="normal" image="book.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="goToFavorites:" destination="BYZ-38-t0r" eventType="touchUpInside" id="clV-ay-Om2"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hru-35-VHl">
-                                <rect key="frame" x="16" y="51" width="17.5" height="22"/>
-                                <state key="normal" image="bookmark" catalog="system"/>
-                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="diV-cf-UeG">
+                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <constraints>
-                            <constraint firstItem="dmy-xr-oU8" firstAttribute="centerX" secondItem="2zl-8k-Sne" secondAttribute="centerX" id="0u7-3h-NM5"/>
                             <constraint firstItem="2zl-8k-Sne" firstAttribute="top" secondItem="dmy-xr-oU8" secondAttribute="bottom" constant="8" symbolic="YES" id="0vx-aR-7f5"/>
+                            <constraint firstItem="3UT-sp-ph9" firstAttribute="baseline" secondItem="Hru-35-VHl" secondAttribute="baseline" id="1vC-Tn-7L2"/>
                             <constraint firstItem="Z4a-Sr-2Xm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3R5-oI-Agd"/>
                             <constraint firstItem="2zl-8k-Sne" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4SZ-tB-8ha"/>
                             <constraint firstItem="2zl-8k-Sne" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4T9-Ew-ibv"/>
-                            <constraint firstItem="3UT-sp-ph9" firstAttribute="leading" secondItem="dmy-xr-oU8" secondAttribute="trailing" constant="20" id="BND-Rg-F7c"/>
+                            <constraint firstItem="3UT-sp-ph9" firstAttribute="leading" secondItem="dmy-xr-oU8" secondAttribute="trailing" constant="9" id="4Us-a7-saC"/>
+                            <constraint firstItem="3UT-sp-ph9" firstAttribute="trailing" secondItem="Z4a-Sr-2Xm" secondAttribute="trailing" id="9PN-WC-trV"/>
+                            <constraint firstItem="3UT-sp-ph9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="9XQ-H2-PzH"/>
+                            <constraint firstItem="Hru-35-VHl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17.5" id="DUX-SA-1Eg"/>
                             <constraint firstItem="2zl-8k-Sne" firstAttribute="top" secondItem="dmy-xr-oU8" secondAttribute="bottom" constant="8" id="Fkg-aw-eG1"/>
-                            <constraint firstItem="dmy-xr-oU8" firstAttribute="centerX" secondItem="Z4a-Sr-2Xm" secondAttribute="centerX" id="QQq-7t-mwM"/>
-                            <constraint firstItem="dmy-xr-oU8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="T5e-dh-2gd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3UT-sp-ph9" secondAttribute="trailing" constant="17.5" id="KWI-IK-aTR"/>
+                            <constraint firstItem="dmy-xr-oU8" firstAttribute="leading" secondItem="Hru-35-VHl" secondAttribute="trailing" constant="15" id="Kax-Z0-Eak"/>
+                            <constraint firstItem="2zl-8k-Sne" firstAttribute="top" secondItem="dmy-xr-oU8" secondAttribute="bottom" constant="8" symbolic="YES" id="L2G-Az-Bv2"/>
+                            <constraint firstItem="diV-cf-UeG" firstAttribute="centerX" secondItem="2zl-8k-Sne" secondAttribute="centerX" id="NkM-3F-V3d"/>
+                            <constraint firstItem="3UT-sp-ph9" firstAttribute="leading" secondItem="dmy-xr-oU8" secondAttribute="trailing" constant="9" id="Q2y-49-vnl"/>
                             <constraint firstItem="Z4a-Sr-2Xm" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="XvE-bQ-l1e"/>
-                            <constraint firstItem="Hru-35-VHl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hEy-B6-lDN"/>
-                            <constraint firstItem="dmy-xr-oU8" firstAttribute="centerY" secondItem="3UT-sp-ph9" secondAttribute="centerY" id="o5N-M6-ark"/>
-                            <constraint firstItem="Z4a-Sr-2Xm" firstAttribute="top" secondItem="2zl-8k-Sne" secondAttribute="bottom" constant="21" id="vvM-QA-Ifm"/>
-                            <constraint firstItem="dmy-xr-oU8" firstAttribute="centerY" secondItem="Hru-35-VHl" secondAttribute="centerY" id="weL-v9-FB5"/>
+                            <constraint firstItem="2zl-8k-Sne" firstAttribute="top" secondItem="dmy-xr-oU8" secondAttribute="bottom" constant="8" symbolic="YES" id="eXL-qj-X9K"/>
+                            <constraint firstItem="3UT-sp-ph9" firstAttribute="leading" secondItem="dmy-xr-oU8" secondAttribute="trailing" constant="9" id="fKe-F1-Fhn"/>
+                            <constraint firstItem="3UT-sp-ph9" firstAttribute="leading" secondItem="dmy-xr-oU8" secondAttribute="trailing" constant="9" id="fvM-NZ-L5I"/>
+                            <constraint firstItem="2zl-8k-Sne" firstAttribute="top" secondItem="dmy-xr-oU8" secondAttribute="bottom" constant="8" symbolic="YES" id="kZz-Y2-jW1"/>
+                            <constraint firstItem="3UT-sp-ph9" firstAttribute="centerY" secondItem="dmy-xr-oU8" secondAttribute="centerY" id="pF9-CH-qzn"/>
+                            <constraint firstItem="Z4a-Sr-2Xm" firstAttribute="top" secondItem="2zl-8k-Sne" secondAttribute="bottom" constant="21" id="rGx-qR-jA7"/>
+                            <constraint firstItem="diV-cf-UeG" firstAttribute="centerY" secondItem="2zl-8k-Sne" secondAttribute="centerY" id="sGe-jU-3hp"/>
+                            <constraint firstItem="2zl-8k-Sne" firstAttribute="top" secondItem="dmy-xr-oU8" secondAttribute="bottom" constant="8" symbolic="YES" id="uxo-Vf-o3C"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bookMarkButton" destination="Hru-35-VHl" id="bMR-Xx-LKZ"/>
+                        <outlet property="loading" destination="diV-cf-UeG" id="W0X-9A-jnS"/>
+                        <outlet property="urlTextField" destination="dmy-xr-oU8" id="ztP-4v-cLn"/>
+                        <outlet property="webView" destination="2zl-8k-Sne" id="Bxa-bx-st4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
