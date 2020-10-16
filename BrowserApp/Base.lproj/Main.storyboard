@@ -56,6 +56,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5Q-ir-fZv">
                                         <rect key="frame" x="179.5" y="0.0" width="20" height="22"/>
                                         <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                        <connections>
+                                            <action selector="shareUrl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GwO-qH-LG4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxQ-SM-2MM">
                                         <rect key="frame" x="359.5" y="0.0" width="19.5" height="22"/>
