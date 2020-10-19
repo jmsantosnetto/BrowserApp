@@ -145,7 +145,7 @@ class WebViewController: UIViewController, UITextFieldDelegate, WKUIDelegate, WK
                 let favorites = favoriteService.getFavorites()
                 
                 let exists = favorites.filter { (favorite) -> Bool in
-                    favorite.url == self.urlTextField.text
+                    favorite.url == url
                 }
                 
                 if exists.isEmpty {
