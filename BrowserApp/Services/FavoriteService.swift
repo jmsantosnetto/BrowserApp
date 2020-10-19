@@ -18,9 +18,9 @@ class FavoriteService {
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         let dateString = dateFormatter.string(from: date)
         
-        let newFavorite = Favorite(url: url, date: dateString)
         var favorites = self.getFavorites()
-        favorites.append(newFavorite)
+        
+        favorites.append(Favorite(url: url, date: dateString))
         
         storage.set(self.toDictionaries(favorites), forKey: self.favoritesKey)
     }

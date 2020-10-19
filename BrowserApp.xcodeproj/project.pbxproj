@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8289F431253E1E77001C7F3F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289F430253E1E77001C7F3F /* StringExtension.swift */; };
 		82C57DE925390BD60093EEF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C57DE825390BD60093EEF1 /* AppDelegate.swift */; };
 		82C57DEB25390BD60093EEF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C57DEA25390BD60093EEF1 /* SceneDelegate.swift */; };
 		82C57DF025390BD60093EEF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82C57DEE25390BD60093EEF1 /* Main.storyboard */; };
@@ -15,9 +16,13 @@
 		82C57E0125390D260093EEF1 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C57E0025390D260093EEF1 /* WebViewController.swift */; };
 		82E4EAC4253DD7420086DC44 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E4EAC3253DD7420086DC44 /* Favorite.swift */; };
 		82E4EAC7253DD7970086DC44 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E4EAC6253DD7970086DC44 /* FavoriteService.swift */; };
+		82E4EACB253DE1770086DC44 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E4EACA253DE1770086DC44 /* FavoritesViewController.swift */; };
+		82E4EACF253DEBEC0086DC44 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E4EACE253DEBEC0086DC44 /* FavoritesCell.swift */; };
+		82E4EAD4253E0AD10086DC44 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E4EAD3253E0AD10086DC44 /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8289F430253E1E77001C7F3F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		82C57DE525390BD60093EEF1 /* BrowserApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowserApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C57DE825390BD60093EEF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82C57DEA25390BD60093EEF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +34,9 @@
 		82C57E0625394DC50093EEF1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		82E4EAC3253DD7420086DC44 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		82E4EAC6253DD7970086DC44 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
+		82E4EACA253DE1770086DC44 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		82E4EACE253DEBEC0086DC44 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
+		82E4EAD3253E0AD10086DC44 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +70,11 @@
 		82C57DE725390BD60093EEF1 /* BrowserApp */ = {
 			isa = PBXGroup;
 			children = (
+				82E4EAD2253E0AC00086DC44 /* Extensions */,
+				82E4EACD253DEBDE0086DC44 /* Layout */,
 				82E4EAC2253DD7280086DC44 /* Models */,
 				82E4EAC1253DD71E0086DC44 /* Services */,
-				82C57DFF25390D190093EEF1 /* Controller */,
+				82C57DFF25390D190093EEF1 /* Controllers */,
 				82C57DE825390BD60093EEF1 /* AppDelegate.swift */,
 				82C57DEA25390BD60093EEF1 /* SceneDelegate.swift */,
 				82C57DEE25390BD60093EEF1 /* Main.storyboard */,
@@ -75,12 +85,13 @@
 			path = BrowserApp;
 			sourceTree = "<group>";
 		};
-		82C57DFF25390D190093EEF1 /* Controller */ = {
+		82C57DFF25390D190093EEF1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				82C57E0025390D260093EEF1 /* WebViewController.swift */,
+				82E4EACA253DE1770086DC44 /* FavoritesViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		82E4EAC1253DD71E0086DC44 /* Services */ = {
@@ -97,6 +108,23 @@
 				82E4EAC3253DD7420086DC44 /* Favorite.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		82E4EACD253DEBDE0086DC44 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				82E4EACE253DEBEC0086DC44 /* FavoritesCell.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		82E4EAD2253E0AC00086DC44 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				82E4EAD3253E0AD10086DC44 /* UIViewControllerExtension.swift */,
+				8289F430253E1E77001C7F3F /* StringExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +198,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				82C57DE925390BD60093EEF1 /* AppDelegate.swift in Sources */,
+				82E4EACF253DEBEC0086DC44 /* FavoritesCell.swift in Sources */,
 				82E4EAC4253DD7420086DC44 /* Favorite.swift in Sources */,
 				82C57E0125390D260093EEF1 /* WebViewController.swift in Sources */,
+				82E4EAD4253E0AD10086DC44 /* UIViewControllerExtension.swift in Sources */,
+				8289F431253E1E77001C7F3F /* StringExtension.swift in Sources */,
 				82C57DEB25390BD60093EEF1 /* SceneDelegate.swift in Sources */,
+				82E4EACB253DE1770086DC44 /* FavoritesViewController.swift in Sources */,
 				82E4EAC7253DD7970086DC44 /* FavoriteService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
