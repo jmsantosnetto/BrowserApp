@@ -12,3 +12,4 @@ App focused on WebKit resources
     UIActivityViewController
     UIActivityIndicatorView
 
+![](browser-app-1.gif)  ![](browser-app-2.gif)
