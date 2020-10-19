@@ -26,7 +26,6 @@ class WebViewController: UIViewController, UITextFieldDelegate, WKUIDelegate, WK
         
         NotificationCenter.default.addObserver(self, selector: #selector(onKeyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        self.urlTextField.addTarget(self, action: #selector(onTapTextField), for: .touchDown)
         self.urlTextField.delegate = self
         
         self.setUpWebView()
@@ -46,10 +45,6 @@ class WebViewController: UIViewController, UITextFieldDelegate, WKUIDelegate, WK
             self.keyboardHeight = keyboardSize.height
         }
         
-    }
-    
-    @objc func onTapTextField() {
-        self.urlTextField.text = ""
     }
     
     func setUpWebView() {
@@ -126,8 +121,10 @@ class WebViewController: UIViewController, UITextFieldDelegate, WKUIDelegate, WK
     
     @IBAction func markAsFavorite(_ sender: Any) {
         if let url = self.urlTextField.text {
-            self.favoriteService.addToFavorite(url: url)
-            self.showToast(message: "Adicionado aos favoritos")
+            if url.isValidURL() {
+                self.favoriteService.addToFavorite(url: url)
+                self.showToast(message: "Adicionado aos favoritos", offSetY: self.keyboardHeight)
+            }
         }
     }
     

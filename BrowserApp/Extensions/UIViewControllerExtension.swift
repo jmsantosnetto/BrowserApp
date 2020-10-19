@@ -13,7 +13,7 @@ extension UIViewController {
         var newOffSetY: CGFloat = self.view.frame.size.height - 130
         
         if offSetY != 0 {
-            newOffSetY = offSetY
+            newOffSetY = offSetY + 230
         }
 
         let toastLabel = UILabel(
