@@ -33,6 +33,16 @@ class FavoriteService {
         storage.set(self.toDictionaries(favorites), forKey: self.favoritesKey)
     }
     
+    func removeFavorite(forValue: String) {
+        var favorites = self.getFavorites()
+        
+        favorites = favorites.filter { (favorite) -> Bool in
+            favorite.url != forValue
+        }
+        
+        storage.set(self.toDictionaries(favorites), forKey: self.favoritesKey)
+    }
+    
     func getFavorites() -> [Favorite] {
         if let favorites = UserDefaults.standard.array(forKey: self.favoritesKey) as? [Dictionary<String, String>] {
             return self.toList(favorites).reversed()

@@ -47,6 +47,21 @@ class WebViewController: UIViewController, UITextFieldDelegate, WKUIDelegate, WK
         
     }
     
+    func refreshBookmark() {
+        let favorites = favoriteService.getFavorites()
+        
+        let exists = favorites.filter { (favorite) -> Bool in
+            favorite.url == self.urlTextField.text
+        }
+        
+        if !exists.isEmpty {
+            self.bookMarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+        } else {
+            
+            self.bookMarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        }
+    }
+    
     func setUpWebView() {
         self.webView.allowsBackForwardNavigationGestures = true
         self.webView.allowsLinkPreview = true
@@ -73,6 +88,7 @@ class WebViewController: UIViewController, UITextFieldDelegate, WKUIDelegate, WK
         
         urlTextField.text = url
         history.append(url!)
+        refreshBookmark()
         
         self.loading.stopAnimating()
     }
@@ -88,9 +104,12 @@ class WebViewController: UIViewController, UITextFieldDelegate, WKUIDelegate, WK
     func firstLoad() {
         if history.count > 0 {
             let request: URLRequest = URLRequest(url: URL(string: history.last!)!)
+            self.urlTextField.text = history.last!
             self.webView.load(request)
             return
         }
+        
+        self.urlTextField.text = self.googleAddress
         
         let request: URLRequest = URLRequest(url: URL(string: self.googleAddress)!)
         self.webView.load(request)
@@ -122,8 +141,22 @@ class WebViewController: UIViewController, UITextFieldDelegate, WKUIDelegate, WK
     @IBAction func markAsFavorite(_ sender: Any) {
         if let url = self.urlTextField.text {
             if url.isValidURL() {
-                self.favoriteService.addToFavorite(url: url)
-                self.showToast(message: "Adicionado aos favoritos", offSetY: self.keyboardHeight)
+                
+                let favorites = favoriteService.getFavorites()
+                
+                let exists = favorites.filter { (favorite) -> Bool in
+                    favorite.url == self.urlTextField.text
+                }
+                
+                if exists.isEmpty {
+                    self.favoriteService.addToFavorite(url: url)
+                    self.showToast(message: "Adicionado aos favoritos", offSetY: self.keyboardHeight)
+                } else {
+                    self.favoriteService.removeFavorite(forValue: url)
+                    self.showToast(message: "Removido dos favoritos", offSetY: self.keyboardHeight)
+                }
+                
+                refreshBookmark()
             }
         }
     }
