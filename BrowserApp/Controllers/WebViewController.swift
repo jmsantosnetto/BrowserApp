@@ -62,12 +62,14 @@ class WebViewController: UIViewController, UITextFieldDelegate, WKUIDelegate, WK
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let term = self.urlTextField.text {
             if term.isValidURL() {
-                goToSite()
+                goToSite(term)
             } else {
                 searchOnGoogle(term)
             }
+            
+            self.view.endEditing(true)
         }
-        self.view.endEditing(true)
+        
         return true
     }
     
@@ -99,17 +101,18 @@ class WebViewController: UIViewController, UITextFieldDelegate, WKUIDelegate, WK
         self.webView.load(request)
     }
     
-    func goToSite() {
+    func goToSite(_ url: String) {
         self.loading.startAnimating()
+        var address: String;
         
-        if var address = self.urlTextField.text {
-            if !address.contains("http://") && !address.contains("https://") {
-                address = "http://\(address)"
-            }
-            
-            let request: URLRequest = URLRequest(url: URL(string: address)!)
-            self.webView.load(request)
+        if !url.contains("http://") && !url.contains("https://") {
+            address = "http://\(url)"
+        } else {
+            address = url
         }
+        
+        let request: URLRequest = URLRequest(url: URL(string: address)!)
+        self.webView.load(request)
     }
     
     func searchOnGoogle(_ search: String) {
