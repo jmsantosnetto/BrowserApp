@@ -66,6 +66,12 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.dismiss(animated: true, completion: nil)
+        
+        let presenterController =  presentingViewController as? WebViewController
+        let url = favorites[indexPath.row].url!
+         
+        presenterController?.goToSite(url)
     }
     
     @IBAction func back(_ sender: Any) {

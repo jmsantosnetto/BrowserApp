@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,29 +15,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browser App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNt-Ay-aok">
-                                <rect key="frame" x="116" y="429" width="182" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="fpF-3W-ALI">
+                                <rect key="frame" x="103" y="357" width="208" height="182"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="208" id="Fql-IJ-UgL"/>
+                                    <constraint firstAttribute="height" constant="182" id="SEG-hC-WI9"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="CNt-Ay-aok" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6Oe-e0-xca"/>
-                            <constraint firstItem="CNt-Ay-aok" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="MKa-DN-5oy"/>
+                            <constraint firstItem="fpF-3W-ALI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Uor-kB-nVr"/>
+                            <constraint firstItem="fpF-3W-ALI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="VXJ-q7-epc"/>
+                            <constraint firstItem="fpF-3W-ALI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="WiC-pM-gfJ"/>
+                            <constraint firstItem="fpF-3W-ALI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kso-EK-bGV"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="iTunesArtwork" width="512" height="512"/>
     </resources>
 </document>
